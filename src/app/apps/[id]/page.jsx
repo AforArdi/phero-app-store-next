@@ -7,6 +7,8 @@ import downloadIcon from '@/assets/images/icon-downloads.png'
 import ratingIcon from '@/assets/images/icon-ratings.png'
 import reviewIcon from '@/assets/images/icon-review.png'
 import ChartRating from "@/components/ui/ChartRating";
+import InstallToggleBtn from "@/components/apps/InstallToggleBtn";
+import Image from "next/image";
 
 const appsPromise = async ()=>{
     const res = await fetch('http://localhost:3000/data.json');
@@ -21,33 +23,16 @@ const AppsDetailPage = async ({params}) => {
     // console.log(apps);
     const expectedApp = apps.find(app=> app.id == id);
 
-    const {installed, setInstalled} = useContext(AppInstallContext);
-
-    const handleInstalled=()=>{
-        const appExist = installed.find(app=> app.id == expectedApp.id);
-        if(!appExist){
-            setInstalled(prev=>([
-                ...prev,
-                expectedApp
-            ]));
-            toast.success(`Installed ${expectedApp.title}!`);
-        } else{
-            toast.error(`${expectedApp.title} Already installed`);
-        }
-    }
-
     return ( 
         <div className="bg-base-100">
-            {loading ? 
-            <div className="flex justify-center">
-                <PropagateLoader color="#AD46FF"></PropagateLoader>
-            </div>
-            :
             <div className="container mx-auto my-10">
                 {/* top div */}
                 <div className="flex items-center gap-10">
                     <div className="border ">
-                        <img src={expectedApp.image} alt={expectedApp.title}
+                        <Image src={expectedApp.image}
+                        height={200}
+                        width={250}
+                        alt={expectedApp.title}
                         className="h-60 w-60"
                         />
                     </div>
@@ -81,7 +66,8 @@ const AppsDetailPage = async ({params}) => {
                                 <p className="text-3xl font-extrabold">{expectedApp.reviews}</p>
                             </div>
                         </div>
-                        <button onClick={handleInstalled} className="btn bg-purple-500">Install Now {expectedApp.size} MB</button>
+                        {/* made this button a client component */}
+                        <InstallToggleBtn expectedApp={expectedApp}></InstallToggleBtn>
                     </div>
                 </div>
 
@@ -99,7 +85,6 @@ const AppsDetailPage = async ({params}) => {
                     <p className="text-[20px] text-gray-500">{expectedApp.description}</p>
                 </div>
             </div>
-            }
         </div>
      );
 }
