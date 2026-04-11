@@ -1,14 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
-import { Link } from "react-router";
 
 const AppCard = ({app}) => {
     return ( 
-        <Link to={`/apps/${app.id}`} className="card bg-base-100 shadow-sm">
+        <Link href={`/apps/${app.id}`} className="card bg-base-100 shadow-sm">
             <figure>
-                <img
+                <Image
                 src={app.image}
-                alt={app.title} className="h-50 w-auto" />
+                alt={app.title} 
+                width={200}
+                height={200}
+                className="w-auto"
+                 />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">
