@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Phero App Store
 
-## Getting Started
+A modern, feature-rich app store application built with **Next.js**. Browse, view details, and manage your favorite applications with an intuitive and responsive user interface.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Home Page**: Display trending apps with banner, statistics, and featured applications
+- **App Browsing**: Browse a comprehensive catalog of applications
+- **App Details**: View detailed information about each app including:
+  - App description and company information
+  - User ratings and reviews
+  - Download statistics
+  - App size and installation options
+  - Visual rating charts
+- **Install/Uninstall**: Install apps to your collection and uninstall them easily
+- **Installed Apps Dashboard**: Manage all your installed applications in one place
+- **Responsive Design**: Fully responsive UI that works seamlessly across devices
+- **Toast Notifications**: Real-time feedback for user actions using react-toastify
+- **Charts & Analytics**: Visual representation of app ratings and statistics
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Frontend Framework**: React 19.2.4
+- **Build Tool**: Next.js 16.2.3 (Server-side rendering & static generation)
+- **Styling**: 
+  - Tailwind CSS 4
+  - DaisyUI 5.5.19 (Tailwind CSS component library)
+- **Routing**: Next.js App Router
+- **Charts**: Recharts 3.8.1
+- **Icons**: React Icons 5.6.0
+- **Notifications**: React Toastify 11.0.5
+- **Loading Spinners**: React Spinners 0.17.0
+- **Linting**: ESLint 9.39.4
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔄 State Management
 
-## Learn More
+- **Context API**: Global app installation state managed through `AppInstallContext`
+- **Local State**: Component-level state with React hooks
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Pages & Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Landing page with trending apps and statistics |
+| Apps | `/apps` | Complete app catalog with browsing capabilities |
+| App Details | `/apps/:id` | Detailed view of individual apps with ratings and charts |
+| Installed Apps | `/installation` | Manage installed applications |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,6 +1,7 @@
 'use client'
 import { AppInstallContext } from "@/context/AppInstallContext";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const InstallToggleBtn = ({expectedApp}) => {
     const {installed, setInstalled} = useContext(AppInstallContext);

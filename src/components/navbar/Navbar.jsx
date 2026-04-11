@@ -13,7 +13,7 @@ const navItems = [
         go: 'Apps'
     },
     {
-        path: '/installed-apps',
+        path: '/installation',
         go: 'Installation'
     }
 ]
