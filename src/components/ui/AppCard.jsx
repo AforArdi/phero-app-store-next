@@ -13,7 +13,7 @@ const AppCard = ({app}) => {
                 width={200}
                 height={200}
                 className="w-auto"
-                 />
+                ></Image>
             </figure>
             <div className="card-body">
                 <h2 className="card-title">
